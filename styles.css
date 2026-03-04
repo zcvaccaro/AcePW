@@ -1,0 +1,128 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --dark-overlay: rgba(12, 35, 64, 0.8); /* Dark Blue Overlay */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('images/hero.png') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-overlay);
+}
+
+/* Service Cards */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Custom Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M11 14l-6-6 6-6'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M5 2l6 6-6 6'/%3e%3c/svg%3e");
+}
+
+/* Gallery Images Uniform Size */
+#galleryCarousel .carousel-item img {
+    height: 550px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Gallery Carousel Indicators as Dots */
+#galleryCarousel .carousel-indicators {
+    bottom: -70px; /* Position indicators below the image */
+}
+
+#galleryCarousel .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: #6c757d; /* Inactive dot color */
+}
+
+#galleryCarousel .carousel-indicators .active {
+    background-color: var(--primary-color); /* Active dot color */
+}
+
+/* Add padding below gallery for indicators */
+#gallery {
+    padding-bottom: 100px;
+}
+
+/* Reviews Section */
+#reviews {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+}
+
+#reviews .section-title {
+    margin-top: 1rem; /* Lower the title slightly */
+}
+
+/* Reviews Carousel Fixed Height */
+#reviewsCarousel .carousel-item {
+    min-height: 350px;
+}
+
+#reviewsCarousel .carousel-item .row {
+    min-height: 350px;
+    align-items: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    #galleryCarousel .carousel-item img {
+        height: 350px;
+    }
+}
+
+/* Mobile Navbar Centering */
+@media (max-width: 991px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        margin-bottom: 10px;
+    }
+}
