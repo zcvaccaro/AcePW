@@ -36,18 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const targetElement = document.querySelector(targetId);
-
-            if (targetId === '#contact') {
-                // Scroll to the very bottom of the page for contact links
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-            } else if (targetElement) {
-                const navbar = document.querySelector('.navbar');
-                const navbarHeight = navbar ? navbar.offsetHeight : 0;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+            if (targetElement) {
+                const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
 
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: targetPosition - navbarHeight,
                     behavior: 'smooth'
                 });
             }
